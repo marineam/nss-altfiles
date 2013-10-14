@@ -21,6 +21,7 @@
 #include <errno.h>
 #include <string.h>
 #include <stdlib.h>
+#include "compat.h"
 
 /* These symbols are defined by the including source file:
 
@@ -64,7 +65,7 @@ struct parser_data
     char linebuffer[0];
   };
 
-#ifdef ENTDATA
+#if 1 /* never export instead of using #ifdef ENTDATA */
 /* The function can't be exported, because the entdata structure
    is defined only in files-foo.c.  */
 # define parser_stclass static
