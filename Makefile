@@ -42,7 +42,8 @@ all: $T
 $T: $O
 	$(CC) -shared -o $@ $^ $(LDFLAGS)
 
-files-grp.o files-pwd.o: files-XXX.c files-parse.c compat.h
+$O: files-XXX.c files-parse.c compat.h
+files-hosts.o: mapv4v6addr.h  res_hconf.h
 
 clean:
 	$(RM) $O $T
